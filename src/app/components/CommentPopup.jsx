@@ -50,12 +50,13 @@ const CommentPopup = (props) => {
   return (
     <>
       {props.show ? (
-        <div className="popup-container">
+        <div className="popup-container p-4 md:p-0">
           <div className="content-container">
             <p className="text-xl font-medium">Add new comment</p>
             <div className="mt-4">
               <p>Enter email</p>
               <Input
+                widthFull={true}
                 type="text"
                 placeholder="Enter email"
                 onChange={(e) => setFormData(state => ({...state, email: e.target.value}))}
@@ -66,6 +67,7 @@ const CommentPopup = (props) => {
             <div className="mt-4">
               <p>Enter body</p>
               <Input
+                widthFull={true}
                 type="text"
                 placeholder="Enter body"
                 onChange={(e) => setFormData(state => ({...state, body: e.target.value}))}
@@ -76,6 +78,7 @@ const CommentPopup = (props) => {
             <div className="mt-4">
               <p>Enter name</p>
               <Input
+                widthFull={true}
                 type="text"
                 placeholder="Enter name"
                 onChange={(e) => setFormData(state => ({...state, name: e.target.value}))}

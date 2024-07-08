@@ -1,9 +1,9 @@
-const Input = ({ placeholder, type, withIcon, value, onChange }) => {
+const Input = ({ placeholder, type, widthFull, value, onChange }) => {
   return (
     <>
-      <div className="border-gray-300 leading-10">
+      <div className={`${widthFull && 'w-full'} border-gray-300 leading-10`}>
         <input
-          className="outline-none border h-fit pl-2 rounded-lg text-black"
+          className={`${widthFull && 'w-full'} outline-none border h-fit pl-2 rounded-lg text-black`}
           type={type}
           placeholder={placeholder}
           value={value}

@@ -44,12 +44,13 @@ const Login = () => {
   }
 
   return (
-    <div className="grid grid-cols-4 min-h-screen">
-      <div className="col-span-2 flex justify-center items-center flex-col max-w-[800px] m-auto gap-6">
+    <div className="md:grid md:grid-cols-4 min-h-screen">
+      <div className="col-span-2 flex justify-center items-center flex-col max-w-[800px] m-auto gap-6  p-4">
         <p className="text-2xl font-bold">Log In into your account</p>
         <div className="w-full">
           <p className="mb-3">Email</p>
           <Input
+            widthFull={true}
             type="text"
             placeholder="Please input your email"
             onChange={(e) => setLoginForm(state => ({...state, email: e.target.value}))}
@@ -60,6 +61,7 @@ const Login = () => {
         <div className="w-full">
           <p className="mb-3">Password</p>
           <Input
+            widthFull={true}
             type="password"
             placeholder="Please input your password"
             onChange={(e) => setLoginForm(state => ({...state, password: e.target.value}))}
@@ -72,8 +74,9 @@ const Login = () => {
           text="Login"
           onClickEvent={handleLogin}
         />
+        <div className="mb-0 md:mb-0"/>
       </div>
-      <div className="col-span-2 bg-blue-600">
+      <div className="col-span-2 bg-blue-600 flex items-center justify-center">
         <img src="/assets/login-workplace.png"/>
       </div>
     </div>

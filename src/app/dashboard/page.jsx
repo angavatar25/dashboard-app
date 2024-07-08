@@ -42,24 +42,25 @@ const Dashboard = () => {
         show={showAddNewCommentModal}
         closeModal={handleShowOrCloseModal}
       />
-      <div className='p-4'>
-        <div className='flex justify-between'>
-          <p className=' text-2xl font-bold mb-5'>Table Comment Data</p>
-          <Input
-            placeholder="Search comments"
-            value={searchInput}
-            onChange={handleCommentSearch}
-          />
+      <div>
+        <div className='p-4'>
+          <div className='md:flex md:justify-between mb-5 md:mb-0'>
+            <p className=' text-2xl font-bold mb-5'>Table Comment Data</p>
+            <Input
+              placeholder="Search comments"
+              value={searchInput}
+              onChange={handleCommentSearch}
+            />
+          </div>
+          <DataTable value={filteredCommentData} tableStyle={{ maxWidth: '100rem' }}>
+            <Column field="email" header="Email"></Column>
+            <Column field="body" header="Body"></Column>
+            <Column field="name" header="Name"></Column>
+            <Column field="id" header="ID"></Column>
+            <Column header="Action" style={{ flex: '0 0 4rem' }} body={actionBodyTemplate}></Column>
+          </DataTable>
         </div>
-        <DataTable value={filteredCommentData} tableStyle={{ maxWidth: '100rem' }}>
-          <Column field="email" header="Email"></Column>
-          <Column field="body" header="Body"></Column>
-          <Column field="name" header="Name"></Column>
-          <Column field="id" header="ID"></Column>
-          <Column header="Action" style={{ flex: '0 0 4rem' }} body={actionBodyTemplate}></Column>
-        </DataTable>
-
-        <div className='mt-4'>
+        <div className=' sticky bottom-0 bg-white p-4 drop-shadow-lg'>
           <Button
             text="Add new comment"
             type="primary"
